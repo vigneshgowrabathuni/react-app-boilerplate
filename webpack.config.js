@@ -1,5 +1,8 @@
-const webpack = require('webpack');
 const path = require('path');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+ 
 module.exports = {
   entry: path.join(__dirname, '/src/index.js'),
   module: {
@@ -48,8 +51,16 @@ module.exports = {
     filename: 'bundle.js'
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
-  ],
+      new webpack.HotModuleReplacementPlugin(),
+    //   new BundleAnalyzerPlugin({
+    //       analyzerMode: "static",
+    //       reportFilename: "BundleAnalyzerReport.html",
+    //       generateStatsFile: true
+    //     }),
+      new HtmlWebpackPlugin({
+        template:  path.resolve('./public/index.html'),
+      }),
+    ],
   devServer: {
     contentBase: './public',
     hot: true
