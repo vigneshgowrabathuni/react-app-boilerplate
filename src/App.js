@@ -1,5 +1,5 @@
 import React from 'react';
-import Home from './components/Home';
+import Home from './components/Home/Home';
 import { connect } from 'react-redux';
 import {fetchData} from "./actions/actions";
 import get from "lodash/get";

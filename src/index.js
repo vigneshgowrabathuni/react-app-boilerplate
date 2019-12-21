@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import {createStore, combineReducers} from 'redux';
 import reducer from "./reducer/reducer";
 import {Provider} from 'react-redux';
-import './index.css';
+import './index.scss';
 import App from './App';
 
 const rootReducer = combineReducers(reducer);
